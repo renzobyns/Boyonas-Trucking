@@ -1,0 +1,370 @@
+{
+  "roles": [{ "roleId": 1, "roleName": "Admin" }, { "roleId": 2, "roleName": "Driver" }],
+  "users": [
+    {
+      "userId": 1,
+      "fullName": "Admin User",
+      "email": "admin@boyonas.com",
+      "password": "admin123",
+      "roleId": 1,
+      "contactNumber": "09123456789"
+    },
+    {
+      "userId": 2,
+      "fullName": "Juan Dela Cruz",
+      "email": "juan@boyonas.com",
+      "password": "driver123",
+      "roleId": 2,
+      "contactNumber": "09987654321"
+    },
+    {
+      "userId": 3,
+      "fullName": "Maria Santos",
+      "email": "maria@boyonas.com",
+      "password": "driver123",
+      "roleId": 2,
+      "contactNumber": "09876543210"
+    }
+  ],
+  "trucks": [
+    {
+      "truckId": 1,
+      "plateNumber": "ABC-1234",
+      "model": "Isuzu NPR",
+      "capacity": 5000,
+      "year": 2022,
+      "operationalStatus": "Available",
+      "documentStatus": "Valid",
+      "status": "Okay to Use",
+      "imagePath": "/images/truck-1.jpg",
+      "remarks": null
+    },
+    {
+      "truckId": 2,
+      "plateNumber": "XYZ-5678",
+      "model": "Hino 500",
+      "capacity": 8000,
+      "year": 2021,
+      "operationalStatus": "On Delivery",
+      "documentStatus": "Valid",
+      "status": "Okay to Use",
+      "imagePath": "/images/truck-2.jpg",
+      "remarks": null
+    },
+    {
+      "truckId": 3,
+      "plateNumber": "DEF-9012",
+      "model": "Mitsubishi Fuso",
+      "capacity": 3000,
+      "year": 2020,
+      "operationalStatus": "Maintenance",
+      "documentStatus": "Expired",
+      "status": "Not Okay to Use",
+      "imagePath": "/images/truck-3.jpg",
+      "remarks": "Engine maintenance scheduled"
+    }
+  ],
+  "truckDocuments": [
+    {
+      "documentId": 1,
+      "truckId": 1,
+      "documentType": "OR",
+      "filePath": "/documents/truck-1-or.pdf",
+      "dateUploaded": "2024-01-15",
+      "expiryDate": "2025-01-15",
+      "status": "Valid"
+    },
+    {
+      "documentId": 2,
+      "truckId": 1,
+      "documentType": "CR",
+      "filePath": "/documents/truck-1-cr.pdf",
+      "dateUploaded": "2024-01-15",
+      "expiryDate": "2025-01-15",
+      "status": "Valid"
+    }
+  ],
+  "employees": [
+    {
+      "employeeId": 1,
+      "userId": 2,
+      "fullName": "Juan Dela Cruz",
+      "position": "Driver",
+      "employeeCode": "DRV-001",
+      "contactNumber": "09987654321",
+      "status": "Deployed",
+      "licenseInfo": "License No. D123456",
+      "dateStarted": "2020-05-10",
+      "yearsOnTeam": 4,
+      "emergencyContactName": "Maria Dela Cruz",
+      "emergencyContactNumber": "09123456789"
+    },
+    {
+      "employeeId": 2,
+      "userId": 3,
+      "fullName": "Maria Santos",
+      "position": "Helper",
+      "employeeCode": "HLP-001",
+      "contactNumber": "09876543210",
+      "status": "Idle",
+      "licenseInfo": null,
+      "dateStarted": "2021-08-20",
+      "yearsOnTeam": 3,
+      "emergencyContactName": "Pedro Santos",
+      "emergencyContactNumber": "09111111111"
+    }
+  ],
+  "employeeDocuments": [
+    {
+      "documentId": 1,
+      "employeeId": 1,
+      "documentType": "License",
+      "filePath": "/documents/juan-license.pdf",
+      "dateUploaded": "2024-01-15",
+      "expiryDate": "2026-01-15"
+    },
+    {
+      "documentId": 2,
+      "employeeId": 1,
+      "documentType": "ID",
+      "filePath": "/documents/juan-id.pdf",
+      "dateUploaded": "2024-01-15",
+      "expiryDate": "2027-01-15"
+    }
+  ],
+  "partnershipBookings": [
+    {
+      "bookingId": 1,
+      "drNumber": "SPX-2025-0001",
+      "partnerName": "SPX Express",
+      "routeFrom": "SOC Warehouse - Quezon City",
+      "routeTo": "Client Site - Makati",
+      "scheduledStart": "2025-01-20T08:00:00",
+      "deadline": "2025-01-20T17:00:00",
+      "estimatedWeight": 5000,
+      "category": "Electronics",
+      "dateCreated": "2025-01-19T10:00:00",
+      "createdBy": 1,
+      "status": "Assigned"
+    },
+    {
+      "bookingId": 2,
+      "drNumber": "SPX-2025-0002",
+      "partnerName": "SPX Express",
+      "routeFrom": "Warehouse - Manila",
+      "routeTo": "Distribution Center - Laguna",
+      "scheduledStart": "2025-01-21T09:00:00",
+      "deadline": "2025-01-21T18:00:00",
+      "estimatedWeight": 8500,
+      "category": "Construction Materials",
+      "dateCreated": "2025-01-19T11:00:00",
+      "createdBy": 1,
+      "status": "Pending Assignment"
+    }
+  ],
+  "deliveryAssignments": [
+    {
+      "assignmentId": 1,
+      "bookingId": 1,
+      "bookingType": "Partnership",
+      "truckId": 2,
+      "driverId": 1,
+      "helperId": 2,
+      "assignedDate": "2025-01-19T14:00:00",
+      "currentStatus": "OTW to SOC",
+      "remarks": "On schedule"
+    },
+    {
+      "assignmentId": 2,
+      "bookingId": 2,
+      "bookingType": "Partnership",
+      "truckId": 1,
+      "driverId": 1,
+      "helperId": null,
+      "assignedDate": "2025-01-19T15:00:00",
+      "currentStatus": "Pending",
+      "remarks": null
+    }
+  ],
+  "deliveryStatusLogs": [
+    {
+      "statusLogId": 1,
+      "assignmentId": 1,
+      "status": "OTW to SOC",
+      "remarks": "Left warehouse",
+      "timestamp": "2025-01-20T08:15:00",
+      "updatedBy": 2
+    }
+  ],
+  "deliveryDocuments": [
+    {
+      "documentId": 1,
+      "assignmentId": 1,
+      "documentType": "DeliveryReceipt",
+      "filePath": "/documents/delivery-1-receipt.pdf",
+      "dateUploaded": "2025-01-20T17:00:00",
+      "uploadedBy": 2
+    },
+    {
+      "documentId": 2,
+      "assignmentId": 1,
+      "documentType": "CargoPhoto",
+      "filePath": "/documents/delivery-1-photo.jpg",
+      "dateUploaded": "2025-01-20T17:05:00",
+      "uploadedBy": 2
+    }
+  ],
+  "lipatBahayBookings": [
+    {
+      "bookingId": 1,
+      "customerName": "John Doe",
+      "phoneNumber": "09123456789",
+      "fromAddress": "123 Main St, Manila",
+      "toAddress": "456 Oak Ave, Quezon City",
+      "scheduledStart": "2025-01-22T08:00:00",
+      "deadline": "2025-01-22T17:00:00",
+      "estimatedWeight": 2000,
+      "category": "Household Items",
+      "status": "Assigned",
+      "dateCreated": "2025-01-19T12:00:00",
+      "createdBy": 1
+    },
+    {
+      "bookingId": 2,
+      "customerName": "Jane Smith",
+      "phoneNumber": "09987654321",
+      "fromAddress": "789 Pine Rd, Makati",
+      "toAddress": "321 Elm St, Pasig",
+      "scheduledStart": "2025-01-23T09:00:00",
+      "deadline": "2025-01-23T18:00:00",
+      "estimatedWeight": 3500,
+      "category": "Furniture",
+      "status": "Pending Assignment",
+      "dateCreated": "2025-01-19T13:00:00",
+      "createdBy": 1
+    }
+  ],
+  "lipatBahayAssignments": [
+    {
+      "assignmentId": 1,
+      "bookingId": 1,
+      "bookingType": "LipatBahay",
+      "truckId": 1,
+      "driverId": 1,
+      "helperId": 2,
+      "assignedDate": "2025-01-19T16:00:00",
+      "currentStatus": "OTW to Pickup",
+      "remarks": "Customer confirmed"
+    }
+  ],
+  "lipatBahayDocuments": [
+    {
+      "documentId": 1,
+      "assignmentId": 1,
+      "documentType": "DeliveryReceipt",
+      "filePath": "/documents/lipat-1-receipt.pdf",
+      "dateUploaded": "2025-01-22T17:00:00",
+      "uploadedBy": 2
+    }
+  ],
+  "soaRecords": [
+    {
+      "soaId": 1,
+      "serviceType": "Partnership",
+      "dateFrom": "2025-01-01",
+      "dateTo": "2025-01-31",
+      "totalAmount": 125450,
+      "status": "Paid",
+      "paymentDate": "2025-01-31T10:00:00",
+      "remarks": null,
+      "dateGenerated": "2025-01-19T10:00:00",
+      "generatedBy": 1
+    },
+    {
+      "soaId": 2,
+      "serviceType": "LipatBahay",
+      "dateFrom": "2025-01-01",
+      "dateTo": "2025-01-31",
+      "totalAmount": 15000,
+      "status": "Not Yet Paid",
+      "paymentDate": null,
+      "remarks": null,
+      "dateGenerated": "2025-01-28T10:00:00",
+      "generatedBy": 1
+    },
+    {
+      "soaId": 3,
+      "serviceType": "Partnership",
+      "dateFrom": "2025-01-01",
+      "dateTo": "2025-01-31",
+      "totalAmount": 89200,
+      "status": "Paid",
+      "paymentDate": "2025-01-30T14:00:00",
+      "remarks": null,
+      "dateGenerated": "2025-01-31T10:00:00",
+      "generatedBy": 1
+    }
+  ],
+  "soaDetails": [
+    {
+      "soaDetailId": 1,
+      "soaId": 1,
+      "assignmentId": 1,
+      "drNumber": "SPX-2025-0001",
+      "route": "Quezon City → Makati",
+      "plateNumber": "ABC-1234",
+      "deliveryDate": "2025-01-20",
+      "amount": 2500
+    },
+    {
+      "soaDetailId": 2,
+      "soaId": 1,
+      "assignmentId": 2,
+      "drNumber": "SPX-2025-0002",
+      "route": "Manila → Cavite",
+      "plateNumber": "DEF-9012",
+      "deliveryDate": "2025-01-21",
+      "amount": 1800
+    },
+    {
+      "soaDetailId": 3,
+      "soaId": 1,
+      "assignmentId": 3,
+      "drNumber": "SPX-2025-0003",
+      "route": "Pasig → Laguna",
+      "plateNumber": "ABC-1234",
+      "deliveryDate": "2025-01-22",
+      "amount": 2200
+    },
+    {
+      "soaDetailId": 4,
+      "soaId": 2,
+      "assignmentId": 4,
+      "drNumber": "LP-2025-0001",
+      "route": "Manila → Quezon City",
+      "plateNumber": "XYZ-5678",
+      "deliveryDate": "2025-01-22",
+      "amount": 15000
+    },
+    {
+      "soaDetailId": 5,
+      "soaId": 3,
+      "assignmentId": 5,
+      "drNumber": "SPX-2025-0004",
+      "route": "Makati → Pasig",
+      "plateNumber": "GHI-3456",
+      "deliveryDate": "2025-01-23",
+      "amount": 3500
+    },
+    {
+      "soaDetailId": 6,
+      "soaId": 3,
+      "assignmentId": 6,
+      "drNumber": "SPX-2025-0005",
+      "route": "Laguna → Manila",
+      "plateNumber": "JKL-7890",
+      "deliveryDate": "2025-01-24",
+      "amount": 4200
+    }
+  ]
+}
